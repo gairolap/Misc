@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:  profiles:    active: composite
+  cloud:
+    config:
+      server:
+        composite:
+        -
+          type: native
+          search-locations: file:///C:/producer-config
+        -
+          type: native
+          search-locations: file:///C:/listener-config
+        -
+          type: native
+          search-locations: file:///C:/services-config
+        -
+          type: native
+          search-locations: file:///C:/dao-config
